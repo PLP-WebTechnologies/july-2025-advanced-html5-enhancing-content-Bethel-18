@@ -129,50 +129,143 @@
 
 <!-- Sign-in Form Section -->
 <section>
-    <h2>Sign In for More Information</h2>
-    <form action="/submit-signin" method="POST" novalidate>
-        <fieldset>
-            <legend>User Credentials</legend>
+  <h2>Sign Up for More Information</h2>
+  <form action="/submit-signup" method="POST" novalidate>
+    <fieldset>
+      <legend>Personal Information</legend>
 
-            <label for="username">Username or Email:</label><br />
-            <input 
-                type="text" 
-                id="username" 
-                name="username" 
-                placeholder="Enter your username or email" 
-                required 
-                minlength="3"
-                autocomplete="username"
-            />
-            <br /><br />
+      <label for="fullname">Full Name:</label><br />
+      <input
+        type="text"
+        id="fullname"
+        name="fullname"
+        placeholder="Your full name"
+        required
+        minlength="3"
+        autocomplete="name"
+      />
+      <br /><br />
 
-            <label for="password">Password:</label><br />
-            <input 
-                type="password" 
-                id="password" 
-                name="password" 
-                placeholder="Enter your password" 
-                required 
-                minlength="6" 
-                autocomplete="current-password"
-            />
-        </fieldset>
-        <br />
-        <fieldset>
-            <legend>Preferences</legend>
+      <label for="dob">Date of Birth:</label><br />
+      <input
+        type="date"
+        id="dob"
+        name="dob"
+        required
+        max="2025-12-31"
+      />
+      <br /><br />
 
-            <input 
-                type="checkbox" 
-                id="remember" 
-                name="remember" 
-            />
-            <label for="remember">Remember me</label>
-        </fieldset>
-        <br />
+      <label>Gender:</label><br />
+      <input type="radio" id="gender-male" name="gender" value="male" required />
+      <label for="gender-male">Male</label><br />
+      <input type="radio" id="gender-female" name="gender" value="female" />
+      <label for="gender-female">Female</label><br />
+      <input type="radio" id="gender-other" name="gender" value="other" />
+      <label for="gender-other">Other</label>
+    </fieldset>
 
-        <button type="submit">Sign In</button>
-    </form>
+    <br />
+
+    <fieldset>
+      <legend>Account Details</legend>
+
+      <label for="username">Username:</label><br />
+      <input
+        type="text"
+        id="username"
+        name="username"
+        placeholder="Choose a username"
+        required
+        minlength="3"
+        pattern="[A-Za-z0-9_]{3,20}"
+        title="3-20 characters: letters, numbers, underscores only"
+        autocomplete="username"
+      />
+      <br /><br />
+
+      <label for="email">Email Address:</label><br />
+      <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="you@example.com"
+        required
+        autocomplete="email"
+      />
+      <br /><br />
+
+      <label for="password">Password:</label><br />
+      <input
+        type="password"
+        id="password"
+        name="password"
+        placeholder="Enter your password"
+        required
+        minlength="8"
+        autocomplete="new-password"
+      />
+      <br /><br />
+
+      <label for="confirm-password">Confirm Password:</label><br />
+      <input
+        type="password"
+        id="confirm-password"
+        name="confirm-password"
+        placeholder="Re-enter your password"
+        required
+        minlength="8"
+        autocomplete="new-password"
+      />
+    </fieldset>
+
+    <br />
+
+    <fieldset>
+      <legend>Contact Information</legend>
+
+      <label for="phone">Phone Number:</label><br />
+      <input
+        type="tel"
+        id="phone"
+        name="phone"
+        placeholder="+1234567890"
+        pattern="^\+?[0-9\s\-]{7,15}$"
+        title="Enter a valid phone number"
+        required
+        autocomplete="tel"
+      />
+      <br /><br />
+
+      <label for="address">Address:</label><br />
+      <textarea
+        id="address"
+        name="address"
+        rows="3"
+        cols="30"
+        placeholder="Street, City, Country"
+        required
+      ></textarea>
+    </fieldset>
+
+    <br />
+
+    <fieldset>
+      <legend>Terms & Conditions</legend>
+
+      <input
+        type="checkbox"
+        id="terms"
+        name="terms"
+        required
+      />
+      <label for="terms">I agree to the <a href="/terms" target="_blank">Terms and Conditions</a></label>
+    </fieldset>
+
+    <br />
+
+    <button type="submit">Sign Up</button>
+  </form>
 </section>
-
 </body>
 </html>
